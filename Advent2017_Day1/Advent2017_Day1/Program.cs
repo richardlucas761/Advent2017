@@ -2,11 +2,13 @@
 
 namespace Advent2017_Day1
 {
-    class Program
+    public static class Program
     {
         private static void Main()
         {
-            Console.WriteLine("Hello World!");
+            const string test1 = "1122";
+
+            Console.WriteLine($"{test1} = {Solver.Solve(test1)}");
         }
     }
 }
