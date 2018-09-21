@@ -4,7 +4,7 @@
     {
         public static int Solve(string puzzle)
         {
-            return 0;
+            return -1;
         }
     }
 }
