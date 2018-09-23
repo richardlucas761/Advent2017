@@ -1,10 +1,13 @@
-﻿namespace Advent2017
+﻿using System;
+using System.Linq;
+
+namespace Advent2017
 {
     public static class Solver
     {
         public static int SolveDay2(string spreadsheet)
         {
-            return -1;
+            return spreadsheet.Split(Environment.NewLine).Sum(CheckSumForRow);
         }
 
         public static int CheckSumForRow(string row)
@@ -21,7 +24,33 @@
                 return 0;
             }
 
-            return -1;
+            row = RemoveWhitespace(row);
+
+            // Determine highest and lowest values in this row
+            var highest = int.MinValue;
+            var lowest = int.MaxValue;
+
+            foreach (var character in row)
+            {
+                if ((int) char.GetNumericValue(character) > highest)
+                {
+                    highest = (int) char.GetNumericValue(character);
+                }
+
+                if ((int) char.GetNumericValue(character) < lowest)
+                {
+                    lowest = (int) char.GetNumericValue(character);
+                }
+            }
+
+            return highest - lowest;
+        }
+
+        private static string RemoveWhitespace(this string input)
+        {
+            return new string(input.ToCharArray()
+                .Where(c => !char.IsWhiteSpace(c))
+                .ToArray());
         }
 
         public static int SolveDay1Part2(string puzzle)
