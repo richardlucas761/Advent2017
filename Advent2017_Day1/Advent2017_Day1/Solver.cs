@@ -4,7 +4,24 @@
     {
         public static int SolveDay1Part2(string puzzle)
         {
-            return -1;
+            var sum = 0;
+
+            for (var i = 0; i < puzzle.Length; i++)
+            {
+                var offset = puzzle.Length / 2;
+
+                if (i + offset > puzzle.Length - 1)
+                {
+                    offset = offset * -1;
+                }
+
+                if (puzzle[i] == puzzle[i + offset])
+                {
+                    sum = UpdateSum(puzzle, sum, i);
+                }
+            }
+
+            return sum;
         }
 
         public static int SolveDay1Part1(string puzzle)
