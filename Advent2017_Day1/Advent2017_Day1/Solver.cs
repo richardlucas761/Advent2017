@@ -2,7 +2,12 @@
 {
     public static class Solver
     {
-        public static int Solve(string puzzle)
+        public static int SolveDay1Part2(string puzzle)
+        {
+            return -1;
+        }
+
+        public static int SolveDay1Part1(string puzzle)
         {
             var sum = 0;
 
