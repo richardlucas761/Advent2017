@@ -1,3 +1,4 @@
+using Advent2017;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Advent2017_Day1.Tests

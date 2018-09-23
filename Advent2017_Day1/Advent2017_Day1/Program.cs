@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Advent2017_Day1
+namespace Advent2017
 {
     public static class Program
     {
