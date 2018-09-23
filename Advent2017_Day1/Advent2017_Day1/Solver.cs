@@ -1,4 +1,6 @@
-﻿namespace Advent2017
+﻿using System.Linq;
+
+namespace Advent2017
 {
     public static class Solver
     {
@@ -9,6 +11,12 @@
 
         public static int CheckSumForRow(string row)
         {
+            // Nothing found in the row so the difference between the highest and lowest values is 0
+            if (string.IsNullOrEmpty(row))
+            {
+                return 0;
+            }
+
             return -1;
         }
 
