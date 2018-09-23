@@ -1,6 +1,4 @@
-﻿using System.Linq;
-
-namespace Advent2017
+﻿namespace Advent2017
 {
     public static class Solver
     {
@@ -13,6 +11,12 @@ namespace Advent2017
         {
             // Nothing found in the row so the difference between the highest and lowest values is 0
             if (string.IsNullOrEmpty(row))
+            {
+                return 0;
+            }
+
+            // Only white space found in the row so the difference between highest and lowest is 0
+            if (string.IsNullOrWhiteSpace(row))
             {
                 return 0;
             }
