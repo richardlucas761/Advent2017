@@ -24,33 +24,26 @@ namespace Advent2017
                 return 0;
             }
 
-            row = RemoveWhitespace(row);
-
             // Determine highest and lowest values in this row
             var highest = int.MinValue;
             var lowest = int.MaxValue;
 
-            foreach (var character in row)
+            foreach (var number in row.Split('\t'))
             {
-                if ((int) char.GetNumericValue(character) > highest)
+                var numberInt = Convert.ToInt16(number);
+
+                if (Convert.ToInt16(numberInt) > highest)
                 {
-                    highest = (int) char.GetNumericValue(character);
+                    highest = numberInt;
                 }
 
-                if ((int) char.GetNumericValue(character) < lowest)
+                if (Convert.ToInt16(numberInt) < lowest)
                 {
-                    lowest = (int) char.GetNumericValue(character);
+                    lowest = numberInt;
                 }
             }
 
             return highest - lowest;
-        }
-
-        private static string RemoveWhitespace(this string input)
-        {
-            return new string(input.ToCharArray()
-                .Where(c => !char.IsWhiteSpace(c))
-                .ToArray());
         }
 
         public static int SolveDay1Part2(string puzzle)
