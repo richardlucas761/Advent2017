@@ -2,6 +2,16 @@
 {
     public static class Solver
     {
+        public static int SolveDay2(string spreadsheet)
+        {
+            return -1;
+        }
+
+        public static int CheckSumForRow(string row)
+        {
+            return -1;
+        }
+
         public static int SolveDay1Part2(string puzzle)
         {
             var sum = 0;
