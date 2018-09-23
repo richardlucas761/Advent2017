@@ -24,11 +24,21 @@ namespace Advent2017
                 return 0;
             }
 
+            // Input row contains both tabs and spaces to separate numbers
+            if (row.Contains('\t') && row.Contains(" "))
+            {
+                throw new ArgumentException();
+            }
+
+            // Determine whether tabs or spaces are used to separate the numbers
+            var splitChar = ' ';
+            if (row.Contains('\t')) splitChar = '\t';
+            if (row.Contains(" ")) splitChar = ' ';
+
             // Determine highest and lowest values in this row
             var highest = int.MinValue;
             var lowest = int.MaxValue;
-
-            foreach (var number in row.Split('\t'))
+            foreach (var number in row.Split(splitChar))
             {
                 var numberInt = Convert.ToInt16(number);
 

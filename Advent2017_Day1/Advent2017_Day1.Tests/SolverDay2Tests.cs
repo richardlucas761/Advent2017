@@ -1,3 +1,4 @@
+using System;
 using System.Text;
 using Advent2017;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -118,6 +119,20 @@ namespace Advent2017_Day1.Tests
         {
             // Arrange
             const string line = "6046	6349	208	276	4643	1085	1539	4986	7006	5374	252	4751	226	6757	7495	2923";
+
+            // Act
+            var result = Solver.CheckSumForRow(line);
+
+            // Assert
+            Assert.AreEqual(7287, result);
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentException))]
+        public void RowCheckSumTestWhiteSpaceAndTabsInInput()
+        {
+            // Arrange
+            const string line = "6046 6349	208	276	4643	1085	1539	4986	7006	5374	252	4751	226	6757	7495	2923";
 
             // Act
             var result = Solver.CheckSumForRow(line);
